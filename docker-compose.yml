@@ -1,0 +1,22 @@
+# Kali Fleet — demo stack.
+#
+#   docker compose up demo   → smoke tests + one-shot demo (offline MOCK)
+#   docker compose up page   → static demo page at http://localhost:8080
+#
+# Live mode: TOKEN_FACTORY_API_KEY in the environment is passed through
+# to the demo service only; nothing is stored in this file.
+
+services:
+  demo:
+    build: .
+    image: kali-fleet:3.12.3
+    environment:
+      TOKEN_FACTORY_API_KEY: "${TOKEN_FACTORY_API_KEY:-}"
+      TOKEN_FACTORY_BASE_URL: "${TOKEN_FACTORY_BASE_URL:-https://api.tokenfactory.nebius.com/v1}"
+
+  page:
+    image: kali-fleet:3.12.3
+    build: .
+    command: ["python3", "-m", "http.server", "8080", "--directory", "demo"]
+    ports:
+      - "8080:8080"

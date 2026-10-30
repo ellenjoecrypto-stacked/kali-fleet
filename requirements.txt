@@ -1,0 +1,20 @@
+# Kali Fleet — Python dependencies: NONE.
+#
+# Verified 2026-10-26 (see STACK-AUDIT-2026-10-26.md): every import in
+# every .py file in this repo resolves to the Python 3.12 standard
+# library (checked against sys.stdlib_module_names) or to a module in
+# this repo itself (kali_bot, token_factory, brain_tokenfactory,
+# fleet_tools, sandbox, approval). There are no third-party packages
+# to install, pin, or update — this file exists so the lock is
+# explicit rather than implied.
+#
+# Runtime is pinned separately: Python 3.12.3 (see .python-version).
+# The one real external dependency is a network API, not a package:
+# Nebius Token Factory (see DEPENDENCIES.md).
+#
+# OPTIONAL EXTRA (2026-10-30): quantum_router.py — and only that
+# module — imports numpy/scipy/qiskit/qiskit-aer. Those are pinned
+# separately in requirements-quantum.txt so this zero-dependency
+# claim stays true for the base system: the router's quantum hook
+# degrades to classical scoring when the extra (or its results
+# file) is absent.

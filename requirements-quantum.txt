@@ -1,0 +1,10 @@
+# OPTIONAL extra — quantum_router.py ONLY (QAOA route scoring on a
+# simulator). The base project is stdlib-only (requirements.txt);
+# nothing else in the tree imports these. Versions are the exact
+# ones installed and test-verified in the build venv on 2026-10-30
+# (pip freeze), not aspirational pins.
+numpy==2.5.4
+scipy==1.18.1
+qiskit==2.6.1
+qiskit-aer==0.18.2
+qiskit-algorithms==0.4.0

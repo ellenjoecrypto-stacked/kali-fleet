@@ -1,0 +1,299 @@
+{
+  "backend": "aer_simulator",
+  "backend_is_simulator": true,
+  "shots": 8192,
+  "reps": 3,
+  "seed": 1234,
+  "penalty_A": 5.0,
+  "optimal_expectation": 10.255063574697438,
+  "optimal_parameters": [
+    -0.2087807357276511,
+    0.09916944121211096,
+    0.6837710027176193,
+    0.9949665208479396,
+    1.0470237326045873,
+    1.6169503980192095
+  ],
+  "counts_top10": [
+    {
+      "bitstring": "10000110",
+      "count": 214,
+      "route": [
+        "Notion",
+        "Stripe",
+        "Gmail"
+      ],
+      "feasible": true,
+      "cost": 0.0
+    },
+    {
+      "bitstring": "10000010",
+      "count": 201,
+      "route": [
+        "Notion",
+        "Gmail"
+      ],
+      "feasible": false,
+      "cost": null
+    },
+    {
+      "bitstring": "00000011",
+      "count": 200,
+      "route": [
+        "GitHub",
+        "Notion"
+      ],
+      "feasible": false,
+      "cost": null
+    },
+    {
+      "bitstring": "00000110",
+      "count": 172,
+      "route": [
+        "Notion",
+        "Stripe"
+      ],
+      "feasible": false,
+      "cost": null
+    },
+    {
+      "bitstring": "10000100",
+      "count": 171,
+      "route": [
+        "Stripe",
+        "Gmail"
+      ],
+      "feasible": false,
+      "cost": null
+    },
+    {
+      "bitstring": "10000011",
+      "count": 170,
+      "route": [
+        "GitHub",
+        "Notion",
+        "Gmail"
+      ],
+      "feasible": true,
+      "cost": 1.0
+    },
+    {
+      "bitstring": "00000111",
+      "count": 170,
+      "route": [
+        "GitHub",
+        "Notion",
+        "Stripe"
+      ],
+      "feasible": true,
+      "cost": 1.0
+    },
+    {
+      "bitstring": "10001100",
+      "count": 166,
+      "route": [
+        "Stripe",
+        "Supabase",
+        "Gmail"
+      ],
+      "feasible": true,
+      "cost": 4.0
+    },
+    {
+      "bitstring": "10000001",
+      "count": 162,
+      "route": [
+        "GitHub",
+        "Gmail"
+      ],
+      "feasible": false,
+      "cost": null
+    },
+    {
+      "bitstring": "10000101",
+      "count": 157,
+      "route": [
+        "GitHub",
+        "Stripe",
+        "Gmail"
+      ],
+      "feasible": true,
+      "cost": 3.0
+    }
+  ],
+  "chosen_route": [
+    "Notion",
+    "Stripe",
+    "Gmail"
+  ],
+  "chosen_bitstring": "10000110",
+  "chosen_route_cost": 0.0,
+  "brute_force_optimum": {
+    "indices": [
+      1,
+      2,
+      7
+    ],
+    "route": [
+      "Notion",
+      "Stripe",
+      "Gmail"
+    ],
+    "cost": 0.0
+  },
+  "brute_force_top5": [
+    {
+      "indices": [
+        1,
+        2,
+        7
+      ],
+      "route": [
+        "Notion",
+        "Stripe",
+        "Gmail"
+      ],
+      "cost": 0.0
+    },
+    {
+      "indices": [
+        0,
+        1,
+        2
+      ],
+      "route": [
+        "GitHub",
+        "Notion",
+        "Stripe"
+      ],
+      "cost": 1.0
+    },
+    {
+      "indices": [
+        0,
+        1,
+        7
+      ],
+      "route": [
+        "GitHub",
+        "Notion",
+        "Gmail"
+      ],
+      "cost": 1.0
+    },
+    {
+      "indices": [
+        0,
+        1,
+        3
+      ],
+      "route": [
+        "GitHub",
+        "Notion",
+        "Supabase"
+      ],
+      "cost": 3.0
+    },
+    {
+      "indices": [
+        0,
+        1,
+        4
+      ],
+      "route": [
+        "GitHub",
+        "Notion",
+        "Nebius"
+      ],
+      "cost": 3.0
+    }
+  ],
+  "subsets_evaluated_classically": 56,
+  "chosen_route_rank": 1,
+  "chosen_route_is_optimal": true,
+  "label": "SIMULATOR -- real QAOA circuit executed on the Qiskit Aer classical simulator (aer_simulator). NOT a QPU run; no quantum speedup claimed.",
+  "weights_disclaimer": "All gate/fuel/latency cost components and the pairwise edge matrix are DESIGN PARAMETERS (see quantum_router.py), informed by the gate/fuel classification in connectors.json. They are not measured data.",
+  "run_started_utc": "2026-10-30T11:33:52.306904+00:00",
+  "run_finished_utc": "2026-10-30T11:34:27.809678+00:00",
+  "run_wall_seconds": 35.5,
+  "versions": {
+    "qiskit": "2.6.1",
+    "qiskit-aer": "0.18.2",
+    "qiskit-algorithms": "0.4.0",
+    "python_module": "quantum_router.py"
+  },
+  "node_table": [
+    {
+      "name": "GitHub",
+      "gate": "approval",
+      "fuel": "LIVE",
+      "gate_cost": 1,
+      "fuel_cost": 0,
+      "latency_cost": 0,
+      "node_cost": 1
+    },
+    {
+      "name": "Notion",
+      "gate": "none",
+      "fuel": "LIVE",
+      "gate_cost": 0,
+      "fuel_cost": 0,
+      "latency_cost": 0,
+      "node_cost": 0
+    },
+    {
+      "name": "Stripe",
+      "gate": "approval",
+      "fuel": "LIVE",
+      "gate_cost": 1,
+      "fuel_cost": 0,
+      "latency_cost": 0,
+      "node_cost": 1
+    },
+    {
+      "name": "Supabase",
+      "gate": "vault",
+      "fuel": "WIRED-NOT-FUELED",
+      "gate_cost": 2,
+      "fuel_cost": 2,
+      "latency_cost": 1,
+      "node_cost": 5
+    },
+    {
+      "name": "Nebius",
+      "gate": "vault",
+      "fuel": "WIRED-NOT-FUELED",
+      "gate_cost": 2,
+      "fuel_cost": 2,
+      "latency_cost": 1,
+      "node_cost": 5
+    },
+    {
+      "name": "Hermes",
+      "gate": "boss-hands",
+      "fuel": "BLOCKED",
+      "gate_cost": 3,
+      "fuel_cost": 4,
+      "latency_cost": 3,
+      "node_cost": 10
+    },
+    {
+      "name": "Telegram",
+      "gate": "vault",
+      "fuel": "BLOCKED",
+      "gate_cost": 2,
+      "fuel_cost": 4,
+      "latency_cost": 3,
+      "node_cost": 9
+    },
+    {
+      "name": "Gmail",
+      "gate": "approval",
+      "fuel": "LIVE",
+      "gate_cost": 1,
+      "fuel_cost": 0,
+      "latency_cost": 0,
+      "node_cost": 1
+    }
+  ]
+}

@@ -1,0 +1,176 @@
+{
+ "generated_from": "Boss's order 2026-10-30 (crew seats) + crew_llm.py roster (LLM assignments on record) + CONNECTION-MAP.md states + HF API model checks run 2026-10-30 (gated: false = ungated, verified live) Roster corrected 2026-10-30 (Boss rulings 06:47 + 06:53 CDT): Luffy & Zoro seat REMOVED (locked art / records only, never a working seat); expedition command inherited by Sung Jin-Woo; enforcer function inherited by Hu Tao as continuity enforcement.",
+ "seats": [
+  {
+   "contract_status_pointer": "exists \u2014 empire/soul-contracts/jade.md (pointer only)",
+   "hf_model": "Qwen/Qwen2.5-7B-Instruct",
+   "ladder": [
+    "hf",
+    "openrouter",
+    "zen",
+    "ollama-local",
+    "heuristic-floor"
+   ],
+   "llm_assignment": "openai/gpt-4o (crew_llm roster)",
+   "member": "Jade (Jadaru)",
+   "state": "LIVE",
+   "subsystem": "Orchestrator / connector \u2014 sequences the God System's work; carries ship-decisions as single taps"
+  },
+  {
+   "contract_status_pointer": "exists \u2014 empire/soul-contracts/big-raga.md (pointer only)",
+   "hf_model": "HuggingFaceH4/zephyr-7b-beta",
+   "ladder": [
+    "hf",
+    "openrouter",
+    "zen",
+    "ollama-local",
+    "heuristic-floor"
+   ],
+   "llm_assignment": "openai/gpt-4o (crew_llm roster)",
+   "member": "Big Raga",
+   "state": "LIVE",
+   "subsystem": "CHIEF VERIFIER \u2014 the Zero-Trust Verification Layer is his seat: System One gate, sentinel doctrine, verification verdicts, god_check. Proven state or demoted \u2014 his call."
+  },
+  {
+   "contract_status_pointer": "exists \u2014 empire/soul-contracts/ellen-joe.md; her slot also covers her scout form (form-contract qrow.md, AUTHORED-2026-10-30). Pointers only",
+   "forms": [
+    "Qrow \u2014 her scout form (SCOUT-RUNNER seat)"
+   ],
+   "hf_model": "Qwen/Qwen2.5-7B-Instruct",
+   "ladder": [
+    "hf",
+    "openrouter",
+    "zen",
+    "ollama-local",
+    "heuristic-floor"
+   ],
+   "llm_assignment": "openai/gpt-4o-mini (crew_llm roster)",
+   "member": "Ellen Joe",
+   "state": "LIVE (process) / desk WIRED-NOT-FUELED",
+   "subsystem": "Router ops + deal desk + Hermes SCOUT-RUNNER seat (as Qrow, her scout form): priced opportunity scouting and gathering legs for the fleet. Trading desk stays paper until the Boss arms it"
+  },
+  {
+   "contract_status_pointer": "exists \u2014 empire/soul-contracts/senku.md; his slot also covers his producer form (form-contract souviern.md, AUTHORED-2026-10-30). Pointers only",
+   "forms": [
+    "Souviern \u2014 his producer form (PRODUCER seat)"
+   ],
+   "hf_model": "deepseek-ai/DeepSeek-R1-Distill-Qwen-7B",
+   "ladder": [
+    "hf",
+    "openrouter",
+    "zen",
+    "ollama-local",
+    "heuristic-floor"
+   ],
+   "llm_assignment": "openai/o1-mini (crew_llm roster)",
+   "member": "Senku",
+   "state": "LIVE (process)",
+   "subsystem": "Evidence engine + Hermes PRODUCER seat (as Souviern, his producer form): source scoring (the 10-source bar), intake analysis, and assembling crew output into shippable increments"
+  },
+  {
+   "contract_status_pointer": "exists \u2014 empire/soul-contracts/sukuna.md (pointer only)",
+   "hf_model": "Qwen/Qwen2.5-Coder-7B-Instruct",
+   "ladder": [
+    "hf",
+    "openrouter",
+    "zen",
+    "ollama-local",
+    "heuristic-floor"
+   ],
+   "llm_assignment": "openai/gpt-4o (crew_llm roster)",
+   "member": "Sukuna",
+   "state": "LIVE (process)",
+   "subsystem": "Red-team module \u2014 adversarial review of the fleet's own builds; defensive scope only; exploit-class stays sandbox/paper"
+  },
+  {
+   "contract_status_pointer": "exists \u2014 empire/soul-contracts/sung-jin-woo.md (pointer only)",
+   "hf_model": "mistralai/Mistral-7B-Instruct-v0.3",
+   "ladder": [
+    "hf",
+    "openrouter",
+    "zen",
+    "ollama-local",
+    "heuristic-floor"
+   ],
+   "llm_assignment": "openai/gpt-4o-mini (crew_llm roster)",
+   "member": "Sung Jin-Woo (+ Ghildra)",
+   "state": "LIVE",
+   "subsystem": "The Forge \u2014 shadow army + Ghildra Skill Forge: engagements become provenance-stamped skills; Ghildra verifies and quarantines. Expedition command sits here too (inherited function, Boss ruling 2026-10-30): Expedition connectors \u2014 scouting sorties that end in staged revenue actions, run as shadow-army tasking."
+  },
+  {
+   "contract_status_pointer": "exists \u2014 empire/soul-contracts/hu-tao.md (pointer only)",
+   "hf_model": "microsoft/Phi-3.5-mini-instruct",
+   "ladder": [
+    "hf",
+    "openrouter",
+    "zen",
+    "ollama-local",
+    "heuristic-floor"
+   ],
+   "llm_assignment": "openai/gpt-4o-mini (crew_llm roster)",
+   "member": "Hu Tao",
+   "state": "LIVE (process)",
+   "subsystem": "Continuity + watchdog \u2014 the never-down keeper: Phoenix Protocol, seals, and watchdog.py's revival watch over every seat's brain rung. She also holds the enforcer function as CONTINUITY ENFORCEMENT (inherited function, Boss ruling 2026-10-30): whatever the watchdog finds down is revived or sealed \u2014 never left silently broken."
+  },
+  {
+   "contract_status_pointer": "exists \u2014 empire/soul-contracts/higuruma.md (pointer only)",
+   "hf_model": "Qwen/Qwen2.5-7B-Instruct",
+   "ladder": [
+    "hf",
+    "openrouter",
+    "zen",
+    "ollama-local",
+    "heuristic-floor"
+   ],
+   "llm_assignment": "openai/o1-mini (crew_llm roster)",
+   "member": "Higuruma",
+   "state": "LIVE (process)",
+   "subsystem": "Rules / compliance module \u2014 grants pipeline, legal-track reads, submission-rule checks"
+  },
+  {
+   "contract_status_pointer": "exists \u2014 empire/soul-contracts/jinx.md (pointer only)",
+   "hf_model": "mistralai/Mistral-7B-Instruct-v0.3",
+   "ladder": [
+    "hf",
+    "openrouter",
+    "zen",
+    "ollama-local",
+    "heuristic-floor"
+   ],
+   "llm_assignment": "openai/gpt-4o (crew_llm roster)",
+   "member": "Jinx",
+   "state": "LIVE (process)",
+   "subsystem": "Deception & chaos probes \u2014 honeypot/canary lane (traps OFF, Boss-gated) + chaos passes on the fleet's own builds"
+  },
+  {
+   "contract_status_pointer": "AUTHORED-2026-10-30 \u2014 empire/soul-contracts/vaelor.md (pointer only)",
+   "hf_model": "Qwen/Qwen2.5-Coder-7B-Instruct",
+   "ladder": [
+    "hf",
+    "openrouter",
+    "zen",
+    "ollama-local",
+    "heuristic-floor"
+   ],
+   "llm_assignment": "not on the crew_llm roster \u2014 legacy orchestrator; seated by the Boss's direct order 2026-10-30",
+   "member": "Vaelor",
+   "state": "PAPER (profile spec) / BLOCKED on the Hermes door",
+   "subsystem": "Hermes FORGE seat \u2014 the build seat: ships build-queue increments on the PC host (Bot Mode FORGE profile)"
+  },
+  {
+   "contract_status_pointer": "exists \u2014 empire/soul-contracts/hermes.md (pointer only)",
+   "hf_model": "Qwen/Qwen2.5-Coder-7B-Instruct",
+   "ladder": [
+    "ollama-local",
+    "hf",
+    "openrouter",
+    "zen",
+    "heuristic-floor"
+   ],
+   "llm_assignment": "ollama/hermes3:8b, local_only (crew_llm roster)",
+   "member": "Hermes",
+   "state": "BLOCKED \u2014 DOOR-PENDING; Boss-reported running 2026-10-29, not Jade-verified",
+   "subsystem": "PC operator \u2014 the host itself: NousResearch hermes-agent on the Boss's PC; the three sibling seats run as its Bot Mode profiles"
+  }
+ ]
+}

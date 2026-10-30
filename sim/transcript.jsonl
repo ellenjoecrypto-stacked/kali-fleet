@@ -1,0 +1,11 @@
+{"sim": true, "kind": "scenario", "label": "SIMULATION \u2014 synthetic own-gear lab host; real code paths, synthetic target", "host": "lab-bench-01 (synthetic)", "engagement": "sim-engagement-0001"}
+{"sim": true, "kind": "invocation", "profile": "scout", "action": "listening_ports", "args": {}, "mode": "dry-run", "host_contract": "hermes --profile <profile> run <invocation>", "transport": "UNSET \u2014 no Hermes host connected (DOOR-PENDING)"}
+{"sim": true, "kind": "action_result", "action": "listening_ports", "mode": "dry-run", "ok": true, "would_run": "ss -tlnp"}
+{"sim": true, "kind": "invocation", "profile": "auditor", "action": "log_triage", "args": {"path": "sim-synthetic.log"}, "mode": "dry-run", "host_contract": "hermes --profile <profile> run <invocation>", "transport": "UNSET \u2014 no Hermes host connected (DOOR-PENDING)"}
+{"sim": true, "kind": "action_result", "action": "log_triage", "mode": "dry-run", "ok": true, "would_run": "read and triage log file: sim-synthetic.log"}
+{"sim": true, "kind": "gate_verdict", "disposition": "ESCALATE", "driver": "law", "reasons": ["Law 2: secret-leak without proven sanctioned provenance", "Law 3: verdict unexplained/hostile at confidence >= 0.60"], "forced": {"key_rotation": true}, "backend": "heuristic"}
+{"sim": true, "kind": "route", "capability": "read-email", "decision": "ROUTE", "connector": "Gmail", "scoring_source": "classical", "reason": "LIVE connector, ungated capability"}
+{"sim": true, "kind": "route", "capability": "decide-jev", "decision": "BLOCKED", "connector": "OpenRouter", "scoring_source": "classical", "reason": "OpenRouter is WIRED-NOT-FUELED \u2014 routing would be a fake success"}
+{"sim": true, "kind": "route", "capability": "charge-card", "decision": "REQUIRES_APPROVAL", "connector": "Stripe", "scoring_source": "classical", "reason": "connector is LIVE but this capability stops at the approval gate \u2014 God Mode shows the gate, it does not remove it"}
+{"sim": true, "kind": "forge_quarantine", "skill": "Synthetic Loopback Census + Log Sweep", "state": "quarantined", "filed": "QUARANTINE.md"}
+{"sim": true, "kind": "forge_verified", "skill": "Synthetic Loopback Census + Log Sweep", "state": "verified", "verified_by": "Ghildra (Skill Forge overseer)", "filed": "fleet-skills.md"}

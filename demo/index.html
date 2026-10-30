@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kali Fleet — a security copilot that can only touch your own gear</title>
+<style>
+  :root { color-scheme: dark; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: #0a0a0c; color: #e8e6df;
+         font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+         line-height: 1.55; }
+  main { max-width: 880px; margin: 0 auto; padding: 32px 20px 64px; }
+  h1 { font-size: 2rem; margin: 0 0 4px; color: #ffb454; }
+  h2 { font-size: 1.15rem; margin: 36px 0 10px; color: #7ee787;
+       text-transform: uppercase; letter-spacing: .06em; }
+  .tag { color: #9a978a; margin: 0 0 24px; }
+  .loop { display: flex; flex-wrap: wrap; gap: 8px; align-items: stretch; margin: 16px 0; }
+  .step { flex: 1 1 140px; border: 1px solid #3a3a42; border-radius: 8px;
+          padding: 10px 12px; background: #121216; }
+  .step b { display: block; color: #ffb454; font-size: .8rem;
+            text-transform: uppercase; letter-spacing: .05em; }
+  .arrow { align-self: center; color: #7ee787; font-size: 1.2rem; }
+  pre { background: #121216; border: 1px solid #3a3a42; border-radius: 8px;
+        padding: 14px; overflow-x: auto; font-size: .85rem; white-space: pre-wrap; }
+  .warn { border-left: 4px solid #ff7b72; padding: 8px 12px; background: #1a1214; }
+  .ok { border-left: 4px solid #7ee787; padding: 8px 12px; background: #101a12; }
+  ul { padding-left: 20px; }
+  footer { margin-top: 48px; color: #9a978a; font-size: .85rem; }
+  a { color: #79b8ff; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Kali Fleet</h1>
+  <p class="tag">An Empire PC Agent build for the Nebius x NVIDIA Hackathon —
+  a plain-English security copilot for Kali Linux that can only ever touch
+  the owner's own machines and authorized labs.</p>
+
+  <h2>What it does</h2>
+  <p>You type a request in plain English — <i>"what's listening on this
+  machine right now?"</i> — and the fleet turns it into one allow-listed,
+  read-only security check, runs it (or shows you the exact command first),
+  and explains the result. Built for a repair-shop operator and home-lab
+  owner who needs a security helper that physically cannot wander onto
+  anyone else's network.</p>
+
+  <h2>The loop</h2>
+  <div class="loop">
+    <div class="step"><b>1 · Request</b>Plain-English request in</div>
+    <div class="arrow">→</div>
+    <div class="step"><b>2 · Nemotron</b>Intent parsed via Nebius Token
+      Factory — Nano class for parsing, Super class for narration,
+      Ultra class reserved for deep log correlation. <i>In the current
+      build this step runs in labeled MOCK mode — no Token Factory key
+      is set yet; the client wiring is real, the inference is not.</i></div>
+    <div class="arrow">→</div>
+    <div class="step"><b>3 · Allow-list gate</b>Action must be on the
+      allow-list; scan targets must be in <i>fleet_targets.txt</i></div>
+    <div class="arrow">→</div>
+    <div class="step"><b>4 · Action</b>Read-only check runs — dry-run by
+      default</div>
+    <div class="arrow">→</div>
+    <div class="step"><b>5 · Audit log</b>Every attempt — allowed, refused,
+      dry-run, executed — appended to a JSONL audit trail</div>
+  </div>
+
+  <h2>The safety model</h2>
+  <ul>
+    <li><b>Allow-list only.</b> Five read-only actions exist: sysinfo,
+      listening ports, interface inventory, log triage, and an nmap
+      service scan. Anything else is refused — there is no generic
+      shell.</li>
+    <li><b>Own gear only.</b> Scans run solely against targets in
+      <i>fleet_targets.txt</i> (default: localhost). A request to scan
+      anything else is refused and logged.</li>
+    <li><b>No payloads in this build.</b> No exploit payloads, no
+      credential attacks, no brute forcing ship here. Two exploit-class
+      recon tools are registered in the codebase but carry no binaries
+      in this build and cannot execute without the Boss's signed,
+      single-use, per-run approval token.</li>
+    <li><b>Dry-run by default.</b> The bot prints the command it
+      <i>would</i> run; execution needs an explicit switch.</li>
+    <li><b>Kill switch.</b> <i>FLEET_STOP=1</i> or a <i>STOP.txt</i> file
+      refuses every action instantly.</li>
+  </ul>
+
+  <h2>Sample session</h2>
+  <p><i>Sample output from the offline demo (mock Nemotron responses,
+  dry-run actions) — labeled sample, not live data:</i></p>
+  <pre>REQUEST : What ports are listening on this machine right now?
+PARSE   : [MOCK mock/nvidia/nemotron-3-nano-30b] -&gt; action=listening_ports args={}
+ACTION  : mode=dry-run would_run=ss -tlnp
+ANSWER  : [MOCK Nemotron] I routed the request through the Kali Fleet
+          allow-list, ran the action in dry-run mode, and logged it to
+          the audit trail.
+
+REQUEST : Scan 8.8.8.8 for services.
+GATE    : REFUSED — target '8.8.8.8' is NOT in the allow-list
+          (fleet_targets.txt). Owner's own machines / authorized labs
+          only. Refused.</pre>
+
+  <div class="ok"><b>Status:</b> the demo loop runs fully offline today.
+  Live Nemotron inference needs a Token Factory API key (supplied by the
+  owner through the Secure Vault); the Builder Program credits application
+  and public repo are owner steps.</div>
+
+  <footer>Kali Fleet · Empire PC Agent · Nebius x NVIDIA Hackathon 2026 ·
+  Best Apps &amp; Agents track · MIT licensed ·
+  Scope: owner's own machines and authorized labs only.</footer>
+</main>
+</body>
+</html>

@@ -1,0 +1,16 @@
+# Kali Fleet: OMEGA — snapshot hygiene (war-room fix 2026-10-30).
+# The export/push step uses this same exclusion list.
+__pycache__/
+*.pyc
+god_check_cache.json
+audit_log.jsonl
+approvals/
+# generated run artifacts (regenerable: god_check, sim/run_sim.py, build_dashboard.py)
+sim/transcript.jsonl
+sim/SUMMARY.md
+sim/sim-audit.jsonl
+sim/skills/
+quantum/results.json
+# war-room working papers — never part of the submission tree
+warroom/
+.git/

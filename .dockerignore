@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+god_check_cache.json
+audit_log.jsonl
+approvals/
+sim/transcript.jsonl
+sim/SUMMARY.md
+sim/sim-audit.jsonl
+sim/skills/
+quantum/results.json
+warroom/
+.git/
